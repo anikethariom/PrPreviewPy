@@ -1,0 +1,31 @@
+# This is a  pr-preview.yml file
+#
+name: PR Preview Deployment
+
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Docker Build
+        run: |
+          echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
+
+      - name: Build and Run the Docker Container
+        run: |
+          docker-compose up -d
+
+      - name: Show Running Containers
+        run: docker ps
+
+# End 

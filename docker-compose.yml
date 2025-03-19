@@ -1,0 +1,15 @@
+# This is docker-compose.yml file 
+#
+version: "3.8"
+
+services:
+  pr-preview:
+    build: .
+    container_name: pr-preview
+    ports:
+      - "5000:5000"
+    environment:
+      - BRANCH_NAME=${BRANCH_NAME}
+
+
+# End
