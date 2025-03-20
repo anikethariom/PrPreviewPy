@@ -18,7 +18,7 @@ jobs:
 
       - name: Build and Run the Docker Container
         run: |
-          docker-compose up -d
+          docker-compose up --build -d
 
       - name: Show Running Containers
         run: docker ps
