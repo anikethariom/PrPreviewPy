@@ -11,7 +11,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-jobs:
+
   test-ssh:
     runs-on: ubuntu-latest
     steps:
@@ -23,10 +23,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             echo "SSH Connection Successful!"
-
-
-  
-
 
     steps:
       - name: Checkout Repository
