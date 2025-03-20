@@ -24,7 +24,6 @@ jobs:
           script: |
             echo "SSH Connection Successful!"
 
-    steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
